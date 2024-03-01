@@ -1,0 +1,22 @@
+package StrukturData;
+import java.util.Arrays;
+public class Main{
+
+    public static void main(String[] args) {
+        byte []  a = {1, 2, 3, 4, 5};
+        
+        short[]  b = {6, 7, 8, 9, 10};
+        
+        int[]    c = {11, 12, 13, 14};
+        
+        long[]   d = {15, 16, 17, 18};
+        
+        float[]  e = {19, 20, 21, 22};
+        
+        char[]   f = {'a', 'b', 'c' };
+        
+        double[] g = {11.1, 22.2, 33.3, 44.4 };
+        
+        boolean[]h = {true, false, true, false};
+    }
+}
