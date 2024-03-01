@@ -1,0 +1,149 @@
+package StrukturData;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringJoiner;
+
+public class Ikky {
+    public static void main(String[] args) {
+      
+      //1. Buat array 1 dimensi dengan 8 tipe data primitif dan berikan nilai setiap array tersebut.
+        int[] a = {1, 2, 3, 4, 5};
+        double[] b = {1.5, 2.5, 3.5, 4.5, 5.5};
+        float[] c = {1.5f, 2.5f, 3.5f, 4.5f, 5.5f};
+        boolean[] d = {true, false, true, false, true};
+        char[] e = {'a', 'b', 'c', 'd', 'e'};
+        byte[] f = {1, 2, 3, 4, 5};
+        short[] g = {1, 2, 3, 4, 5};
+        long[] h = {100L, 2000L, 30000L, 400000L, 5000000L};
+        
+      //2. Buat array 1D bertipe data primitif apapun, berikan nilai dan cetak dengan 5 metode mencetak isi array.
+        int[] dataArray = {10, 20, 30, 40, 50};
+
+        // Metode 1: Menggunakan loop for
+        System.out.println("Metode 1: Menggunakan loop for");
+        for (int i = 0; i < dataArray.length; i++) {
+            System.out.print(dataArray[i] + " ");
+        }
+        System.out.println();
+
+        // Metode 2: Menggunakan for-each loop
+        System.out.println("Metode 2: Menggunakan for-each loop");
+        for (int num : dataArray) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Metode 3: Menggunakan metode Arrays.toString()
+        System.out.println("Metode 3: Menggunakan metode Arrays.toString()");
+        System.out.println(Arrays.toString(dataArray));
+
+        // Metode 4: Menggunakan Stream API
+        System.out.println("Metode 4: Menggunakan Stream API");
+        Arrays.stream(dataArray).forEach(num -> System.out.print(num + " "));
+        System.out.println();
+
+        // Metode 5: Menggunakan StringJoiner
+        System.out.println("Metode 5: Menggunakan StringJoiner");
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        for (int num : dataArray) {
+            joiner.add(String.valueOf(num));
+        }
+        System.out.println(joiner.toString());
+        
+      //3. Buat array 2D dan lakukan input nilai menggunakan keyboard dan cetak isi array.
+        Scanner scanner = new Scanner(System.in);
+
+        // Input ukuran array 1D
+        System.out.print("Masukkan jumlah baris: ");
+        int rows = scanner.nextInt();
+        System.out.print("Masukkan jumlah kolom: ");
+        int columns = scanner.nextInt();
+
+        // Membuat array 2 dimensi
+        int[][] matrix = new int[rows][columns];
+
+        // Input nilai untuk setiap elemen array
+        System.out.println("Masukkan nilai untuk setiap elemen array:");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("Elemen [" + i + "][" + j + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Mencetak isi array 2 dimensi
+        System.out.println("Isi array 2 dimensi:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Menutup scanner
+        scanner.close();
+        
+      //Soal ArrayList
+      //Buat ArrayList dengan tipe data wrapper dan berikan nilai cetak ArrayList.
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        // Menambahkan nilai ke ArrayList
+        arrayList.add(10);
+        arrayList.add(20);
+        arrayList.add(30);
+        arrayList.add(40);
+        arrayList.add(50);
+
+        // Mencetak isi ArrayList
+        System.out.println("Isi ArrayList:");
+        for (Integer value : arrayList) {
+            System.out.println(value);
+        }
+        
+      /*Buat ArrayList bertipe Integer dan lakukan proses penambahan nilai,
+        mengakses nilai pada index tertentu, mengganti nilai, menghapus nilai, 
+        dan membaca ukuran arraylist*/
+        // Membuat ArrayList bertipe Integer
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+
+        // Penambahan nilai ke ArrayList
+        arrayList.add(10);
+        arrayList.add(20);
+        arrayList.add(30);
+        arrayList.add(40);
+        arrayList.add(50);
+
+        // Mencetak isi ArrayList
+        System.out.println("Isi ArrayList:");
+        for (Integer value : arrayList) {
+            System.out.println(value);
+        }
+
+        // Mengakses nilai pada indeks tertentu
+        int indexToAccess = 2;
+        System.out.println("\nNilai pada indeks " + indexToAccess + ": " + arrayList.get(indexToAccess));
+
+        // Mengganti nilai pada indeks tertentu
+        int newValue = 99;
+        arrayList.set(indexToAccess, newValue);
+        System.out.println("\nIsi ArrayList setelah mengganti nilai pada indeks " + indexToAccess + ":");
+        for (Integer value : arrayList) {
+            System.out.println(value);
+        }
+
+        // Menghapus nilai pada indeks tertentu
+        int indexToRemove = 3;
+        arrayList.remove(indexToRemove);
+        System.out.println("\nIsi ArrayList setelah menghapus nilai pada indeks " + indexToRemove + ":");
+        for (Integer value : arrayList) {
+            System.out.println(value);
+        }
+
+        // Membaca ukuran ArrayList
+        System.out.println("\nUkuran ArrayList: " + arrayList.size());
+    }
+    
+}
